@@ -6,7 +6,8 @@ const initialState = {
     longitude: -122.41,
     zoom: 11
   },
-  isLoad: false
+  isLoad: false,
+  style: []
 };
 
 export default (state = initialState, action) => {
@@ -23,6 +24,14 @@ export default (state = initialState, action) => {
       return ({
         ...state,
         isLoad: true
+      });
+    }
+    case actions.STYLE_FETCH_SUCCESS: {
+      const style = action.payload;
+
+      return ({
+        ...state,
+        style
       });
     }
     default:

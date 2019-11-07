@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { onViewportChange, onLoadMap } from '../../reducers/map/actions';
+import { onViewportChange, onLoadMap, getStyle } from '../../reducers/map/actions';
 import { viewportSelector } from '../../reducers/map/selectors';
+
 
 import Map from './Map';
 
@@ -13,7 +14,8 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = {
   onViewportChange,
-  onLoadMap
+  onLoadMap,
+  getStyle
 };
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
