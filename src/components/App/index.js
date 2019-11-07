@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { isMapLoadSelector } from '../../reducers/map/selectors';
+import { isShowMapSelector } from '../../reducers/ui/selectors';
+import { toggleIsShowMap } from '../../reducers/ui/actions';
 
 import App from './App';
 
 const mapStateToProps = createSelector(
-  isMapLoadSelector,
-  (isMapLoad) => ({ isMapLoad })
+  isShowMapSelector,
+  (isShowMap) => ({ isShowMap })
 );
 
-const mapDispatchToProps = null;
+const mapDispatchToProps = {
+  toggleIsShowMap
+};
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 

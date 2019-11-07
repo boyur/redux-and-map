@@ -1,11 +1,13 @@
 import React from 'react';
 import Map from '../../components/Map';
 
-const App = ({ isMapLoad }) => {
+const App = ({ toggleIsShowMap, isShowMap }) => {
   return (
     <div className="App">
-      <Map />
-      { isMapLoad && 'Карта загружена' }
+      <button onClick={toggleIsShowMap}>
+        {isShowMap ? 'Закрыть карту' : 'Открыть карту'}
+      </button>
+      { isShowMap && <Map /> }
     </div>
   );
 };
